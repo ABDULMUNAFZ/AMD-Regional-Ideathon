@@ -155,11 +155,47 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) { .floating-img { width: 100px !important; height: 100px !important; } }
 
-/* Highlights (Horizontal) */
-.highlights-wrapper { background: var(--mid-green); overflow: hidden; }
-.highlights-container { display: flex; width: fit-content; }
-.highlight-panel { width: 100vw; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
-.highlight-content { max-width: 800px; text-align: center; }
+/* Horizontal Scroll Common */
+.highlights-wrapper, .reviews-wrapper { 
+  background: var(--mid-green); 
+  overflow: hidden; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.highlights-container, .reviews-container { 
+  display: flex; 
+  height: 100%;
+}
+
+.scroll-panel { 
+  width: 100vw; 
+  height: 100vh;
+  flex-shrink: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px; 
+}
+
+.highlight-content, .review-card-large { 
+  max-width: 900px; 
+  width: 100%;
+  text-align: center; 
+}
+
+@media (max-width: 768px) {
+  .scroll-panel {
+    padding: 60px 20px;
+  }
+  .review-card-large {
+    padding: 30px 20px;
+  }
+  .review-card-large .quote {
+    font-size: 1.1rem;
+  }
+}
 
 /* Why Us (Widgets) */
 .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
@@ -242,16 +278,6 @@ h1, h2, h3, h4, h5, h6 {
 .add-btn {
   background: var(--lime); color: var(--dark-green); width: 35px; height: 35px;
   border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; font-size: 1.2rem; cursor: pointer;
-}
-
-/* Reviews (Horizontal Scroll Section) */
-.reviews-wrapper { background: var(--mid-green); overflow: hidden; }
-.reviews-container { display: flex; width: fit-content; }
-.review-panel { width: 100vw; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
-
-.review-card-large {
-  background: var(--lime); color: var(--dark-green); padding: 40px; border-radius: 30px;
-  max-width: 700px; text-align: center;
 }
 
 .review-card-large .quote { font-size: 1.5rem; font-style: italic; margin-bottom: 25px; line-height: 1.6; }
